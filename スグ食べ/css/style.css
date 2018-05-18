@@ -32,7 +32,9 @@ img{
 	height: auto;
 	vertical-align: middle;
 }
-
+.section-main{
+	padding: 0 10px;
+}
 /*--------------------------
 header
 ----------------------------*/
@@ -176,23 +178,27 @@ footer
 ----------------------------*/
 .footer{
 	width: 100%;
-	height: 90px;
+	height: 100%;
+/*
 	background-size: cover;
-	background-image: url(../images/footer/bg_01_sp.jpg);
+	background-image: url(../images/footer/bg_01_pc.jpg);
 	background-repeat: no-repeat;
-	color: #783c01;	
+*/
 }
+
 .copyrights{
+	color: #783c01;
   	font-size: 1rem;
 	margin-bottom: 5px;
 }
+
 .footer .logo{
   	max-width: 75px;
 	margin-bottom: 2px;
 }
 .footer-img{
 	padding: 0 8px;
-	-webkit-display: flex;
+	display: -webkit-flex;
 	display: flex;
 	-webkit-justify-content: space-between;
 	justify-content: space-between;
@@ -222,6 +228,7 @@ section,layout
 .text-center{
 	text-align: center;
 }
+
 .section:before {
     content: " ";
     margin-top: -120px;
@@ -231,7 +238,7 @@ section,layout
 	}
 .section-head{
 	display: block;
-	padding: 30px 0 10px;	
+	padding: 30px 10px 10px;	
 }
 .section-title{
 	background-image: url(../images/common/leaf_sp.png);
@@ -239,26 +246,36 @@ section,layout
 	background-position: center;
 	background-repeat: no-repeat;
 	padding: 20px 0;
-  	font-size: 2.2rem;
+  	font-size: 2.1rem;
 	font-weight: 600;
 	}
 .section-footer{
  	padding: 55px 0 75px;
 }
-.site-text{
+.text{
 	padding: 20px;
 	font-size: 1.5rem;
+	line-height: 1.5;
+	text-align: left;
+}
+.site-text{
+	padding: 20px 0;
+	font-size: 1.48rem;
 	line-height: 1.5;
 	text-align: left;
 }
 /*--------------------------
 btn
 ----------------------------*/
-.btn{
+.btn-sp{
+	display: block;
 	margin: auto;
 	width: 80%;
 	text-align: center;
 	}
+.btn-pc{
+	display: none;
+}
 .btn-outer{
 	margin-top: 15px;
 	}
@@ -310,6 +327,7 @@ trial
   	background-repeat: no-repeat;
   	padding-top: 100px;
 }
+
 .bg-c{
 	text-align: center;
   	background-image: url(../images/trial/bg_02_sp.png);
@@ -318,6 +336,7 @@ trial
   	background-repeat: no-repeat;
   	padding-top: 100px;
 }
+
 .text-center.trial{
 	display: inline-block;
 	width: 80%;
@@ -340,7 +359,6 @@ trial
 	padding-bottom: 5px;
 }	
 	
-	
 .trial-main{
   	padding: 30px 12px 50px;
   	color: #fff;
@@ -360,19 +378,16 @@ trial
 }
 .trial-meta{
 	padding: 0 0 30px;
+	font-size: 1.6rem;
+	font-weight: bold;
+	line-height: 1.7;
 }
 .trial-name{
-	font-size: 1.7rem;
-	font-weight: bold;
 	padding: 5px 0;
+	font-weight: bold;
 }
 .trial-price{
-	padding: 5px 0;
-	font-size: 2rem;
 	font-weight: bold;
-}
-.trial-farmer{
-	padding: 5px 0;
 }
 /*--------------------------
 farmer
@@ -401,6 +416,7 @@ q&a
 ----------------------------*/
 
 .question{
+	font-size: 1.48rem;
 	border-bottom: dotted 2px #159547;	
 }
 .circle-q{
@@ -437,7 +453,7 @@ q&a
 	}	
 
 
-				/*PC Layout*/
+				/*------PC版のcss------*/
 				@media screen and (min-width:641px){
 					/*--------------------------
 					common
@@ -449,21 +465,100 @@ q&a
 					.br-sp{
 						display: none;
 					}
-					
-					
-					
+					.btn-pc{
+						display: block;
+						margin: auto;
+						max-width: 500px;
+						text-align: center;
+						}
+					.btn-sp{
+						display:none;
+					}
+/*
+					.text-center:not(.trial){
+						text-align: center;
+					}
+*/
 					
 					/*--------------------------
 					header
+					----------------------------*/	
+					.hero-title{
+					    position: absolute;
+						width: 70%;
+						left: 28%;
+						padding: 15px 0;
+						font-size: 12px;
+					}
+
+					.hero-text{
+						position: absolute;
+						width: 34%;
+						top: -100%;
+						margin: 15px 0px;
+						padding: 10px 0 10px 15px;
+						color: #783c01;
+						background: #fff5dd;
+						font-size: 2.2rem;
+						font-weight: bold;
+						font-family: 'ヒラギノ明朝 ProN W6', 'HiraMinProN-W6', serif;
+						text-align: center;
+					}
+					.hero-title-text{
+						padding-left: 15px;
+					}
+					.hero-text-big{	
+						font-size: 33px;
+    					font-weight: bold;
+
+						}
+					.hero-text-small{	
+						margin-left: 8px;
+						font-size: 20px;
+						line-height: 34px;
+						}
+					/*--------------------------
+					footer
 					----------------------------*/
+
+					.footer.footer-pc{
+						padding: 0 8px;
+						width: 100%;
 /*
-					.header .inner{
+						background-size: cover;
+						background-image: url(../images/footer/bg_01_pc.jpg);
+						background-repeat: no-repeat;
+*/
+					}
+					.footer-img.footer-img-pc{
+
 						display: -webkit-flex;
 						display: flex;
+						-webkit-justify-content: space-between;
+						justify-content: space-between;
+						-webkit-align-items: flex-end;
+						align-items: flex-end;
+						padding-top: 130px;
+					
+					}
+											
+/*					}
+					.footer.logo-pc{
+						max-width: 50px;
+						margin-bottom: 2px;
+					}
 */
-						
+/*
+					.copyrights-pc{
+						color: #783c01;
+						font-size: 1.3rem;
+						margin-bottom: 5px;
+					}
+					.copyrights-sp{
+						flex: none;
+					}
 					
-					
+*/
 					
 				
 					/*--------------------------
@@ -489,17 +584,58 @@ q&a
 					/*--------------------------
 					trial
 					----------------------------*/
+					.trial{
+						text-align: right;
+					}
 					.section-main .trial{
 						display: -webkit-flex;
 						display: flex; 
 						margin-bottom: 0;
 						padding: 0 98px;
-					}	
+					}
+					.text-center.trial{
+						width: 45%;
+						padding: 20px;
+						margin: 0 auto 30px;
+						text-align: center;
+					}
 					.trial-list-item{
 						display: -webkit-flex;
 						display: flex;
 						padding: 20px;
-						}				
+						}		
+					.trial-main{
+						width: 40%;
+						font-size: 1.5rem;
+						text-align: center;
+					}
+					.trial-meta{
+						text-align: left;
+						margin-left: 15%;
+					}
+					.bg-b.bg-b-pc{
+						text-align: right;
+						background-image: url(../images/trial/bg_01.png);
+						background-position: 	center top;
+						background-size: cover;
+						background-repeat: no-repeat;
+						padding: 100px 10px 0 0;
+/*						padding-top: 100px;*/
+					}
+					.bg-c.bg-c-pc{
+						text-align: center;
+						background-image: url(../images/trial/bg_02.png);
+						background-position: 	center top;
+						background-size: cover;
+						background-repeat: no-repeat;
+						padding-top: 100px;
+					}
+					.trial-img{
+						width: 50%;
+					}
+					.list{
+						text-align: right;
+					}
 					/*--------------------------
 					recipe
 					----------------------------*/
@@ -535,13 +671,12 @@ q&a
 					.q{
 						display: flex;
 						display: -webkit-flex;
-						
+						align-items: flex-start;			
 					}				
 					.a{
 						display: flex;
 						display: -webkit-flex;
-						margin-left: 7%;
-						margin-top: 2%;
+						margin-left: 4%;
 					}
 					.a obj{
 						display: flex;
@@ -551,10 +686,56 @@ q&a
 						flex-direction: row-reverse;
 					}
 					.question{
-						margin-top: 6%;
+						margin-top: 5%;
 						width: 70%;
+						padding-bottom: 10px;
+						text-align:left;
 					}
-					
+					.circle-q{
+						display: inline-block;
+						text-decoration: none;
+						background: #efe9e6;
+						color: #474747;
+						width: 70px;
+						height: 70px;
+						margin-right: 20px;
+						line-height: 70px;
+						border-radius: 50%;
+						text-align: center;
+						vertical-align: middle;
+						overflow: hidden;
+						font-size: 1.8rem;
+						font-weight: bold;
+						}
+					.answer{
+						font-size: 18px;
+						font-weight: bold;
+						text-align: left;
+						}
+					.answer-text {
+						font-size: 1.5rem;
+						line-height: 1.5;
+						text-align: left;	
+					}
+/*
+					.circle-a{
+						display: inline-block;
+						text-decoration: none;
+						background: #faece5;
+						color: #474747;
+						width: 70px;
+						height: 70px;
+						margin: 20px;
+						line-height: 70px;
+						border-radius: 50%;
+						text-align: center;
+						vertical-align: middle;
+						overflow: hidden;
+						font-size: 1.8rem;
+						font-weight: bold;
+						}	
+*/
+
 		/*			.list-question{
 						-webkit-display: flex;
 						display: flex;
