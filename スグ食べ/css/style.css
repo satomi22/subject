@@ -204,13 +204,12 @@ footer
 	align-items: flex-end;
 	padding-top: 65px;
 }
+.btn-pageTop{
+  	display: none;
+}
 /*
 .home .footer{
   	background-color: #f8f3e5;ß
-}
-
-.btn-pageTop{
-  	display: none;
 }
 .footer:last-of-type{
 	padding: 0;
@@ -317,7 +316,7 @@ reason
 /*--------------------------
 trial
 ----------------------------*/
-.bg-b{
+.bg-a{
 	text-align: center;
   	background-image: url(../images/trial/bg_01_sp.png);
   	background-position: 	center top;
@@ -326,7 +325,7 @@ trial
   	padding-top: 100px;
 }
 
-.bg-c{
+.bg-b{
 	text-align: center;
   	background-image: url(../images/trial/bg_02_sp.png);
 	background-position: 	center top;
@@ -376,7 +375,7 @@ trial
 }
 .trial-meta{
 	padding: 0 0 30px;
-	font-size: 1.6rem;
+	font-size: 3.7vw;
 	font-weight: bold;
 	line-height: 1.7;
 }
@@ -520,7 +519,22 @@ q&a
 						height: auto;
 						padding: 0;
 					}
+				/*	.header:before{
+					  content: '';
+					  background: inherit;
+					  -webkit-filter: blur(5px);
+					  -moz-filter: blur(5px);
+					  -o-filter: blur(5px);
+					  -ms-filter: blur(5px);
+					  filter: blur(5px);
+					  position: absolute;
 
+					  top: -5px;
+					  left: -5px;
+					  right: -5px;
+					  bottom: -5px;
+					  z-index: -1;
+					}*/
 					.header-inner {
 						-webkit-display: flex;
 						display: flex;
@@ -533,17 +547,25 @@ q&a
 					.btn-trigger{
 						display: none;
 					}
+					.navigation {
+						display: -webkit-flex;
+						display: flex;
+						-webkit-justify-content: flex-end;
+						justify-content: flex-end;
+					}
 					.header-nav{
 						display: block;
 						position: static;
 						width: 100%;
 						height: auto;
-						padding: 0;
+						padding-top: 20px;
 						background-color: transparent;
 					}
-					.navigation {
-						display: flex;
-					}
+					.header .nav-item>a {
+						color: #fff;
+						text-shadow:0 2px 0 #888, 0 3px 0 #888, 0 4px 5px #333;
+						}
+	
 					.nav-list {
 						display: -webkit-flex;
 						display: flex;
@@ -555,6 +577,8 @@ q&a
 					}
 					.nav-list .sns {
 						margin: 0 0 0 10px;
+						mix-blend-mode : lighten;
+						color: #fff;
 					}
 					.sns{
 						margin-bottom: 15px;
@@ -592,7 +616,40 @@ q&a
 						color: #783c01;
 						font-size: 1.5rem;
 						margin-bottom: 10px;
-					}					
+					}	
+					.btn-pageTop{
+						display: block;
+						position: absolute;
+						right: 0;
+						top: -42px;
+						}
+					.btn-pageTop>a{
+						position: relative;
+						overflow: hidden;/*44pxの箱からはみ出した文章を見えなくする*/
+						display: block;
+						width: 44px;
+						height: 44px;
+						background-color: #fff5dd;
+						border-bottom: solid 4px #783c01;
+						border-radius: 15px 15px 0 0;
+						text-indent: 100%;
+						white-space: nowrap;
+						}
+					.btn-pageTop>a:hover:before{
+						top: 40%;
+						}	
+					.btn-pageTop>a:before{
+						position: absolute;
+						top: 50%;
+						left: 0%;
+						content:"\f077";
+						font-family: FontAwesome;
+						transform: translate3d(-50%,-50%,0);
+						-webkit-transition: all .2s;
+						-moz-transition: all .2s;
+						-ms-transition: all .2s;
+						transition: all .2s;
+						}				
 /*					}
 					.footer.logo-pc{
 						max-width: 50px;
@@ -656,15 +713,16 @@ q&a
 						padding: 20px;
 						}		
 					.trial-main{
-						width: 40%;
+						width: 50%;
 						font-size: 1.5rem;
 						text-align: center;
 					}
 					.trial-meta{
+						font-size: 2vw;
 						text-align: left;
 						margin-left: 15%;
 					}
-					.bg-b.bg-b-pc{
+					.bg-a.bg-a-pc{
 						text-align: right;
 						background-image: url(../images/trial/bg_01.png);
 						background-position: 	center top;
@@ -673,7 +731,7 @@ q&a
 						padding: 100px 10px 0 0;
 /*						padding-top: 100px;*/
 					}
-					.bg-c.bg-c-pc{
+					.bg-b.bg-b-pc{
 						text-align: center;
 						background-image: url(../images/trial/bg_02.png);
 						background-position: 	center top;
@@ -693,11 +751,18 @@ q&a
 					.recipe{
 						display: -webkit-flex;
 						display: flex;
+						padding-bottom: 30px;
 						}	
 						
 					.recipe__reverse{	
 						flex-direction: row-reverse;
-					}					
+					}	
+					.recipe-img{
+						width: 100%;
+						}	
+					.card-meta .recipe-text{
+						width:100%;
+						}				
 					/*--------------------------
 					voice
 					----------------------------*/
