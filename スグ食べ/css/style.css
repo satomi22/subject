@@ -49,7 +49,11 @@ header
 	padding: 20px 20px 16px;
 	border-top: solid 1px #e2dede;
 	background-color: rgba(0,0,0,0.2);
+	box-shadow: 0 0 30px rgba(0,0,0,0.2);
+	border-radius: 2px;
+  	transition: .3s;
 }
+
 .site-title{
   	width: 30%;
 }
@@ -119,17 +123,10 @@ hero-image
 	height: 80px;
 	transform: translate3d(-50%,-50%,0);
 }
-.hero-img {/*親div*/
-  	position: relative;/*相対配置*/
-  }
 .hero-title{
   	position: absolute;
-	width: 100%;
   	top: 40%;
-  	left: 40%;
-	-ms-transform: translate(-40%,-40%);
-  	-webkit-transform: translate(-40%,-40%);
-  	transform: translate(-40%,-40%);
+  	left: 0;
 
   	margin: 15px 0px;
   	padding: 15px 0px 10px;
@@ -145,8 +142,8 @@ hero-image
 .hero-title-text{
 	-webkit-display: flex;
 	display: flex;
-	-webkit-justify-content: center;
-	justify-content: center;
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
 	-webkit-align-items: flex-end;
 	align-items: flex-end;
 }
@@ -154,9 +151,10 @@ hero-image
 	width: 356px;
 	margin: 0 auto;
 }
-  .hero-text-big{
+.hero-text-big{
   	font-size: 26px;
   	font-weight: bold;
+	text-indent: 0.5em;
   }
   
   .hero-text-small{
@@ -168,6 +166,7 @@ hero-image
   
  .hero-text-big::first-letter{
 　	font-size: 2em;
+	 display: block;
   }
 
  .hero-img .img {
@@ -177,8 +176,10 @@ hero-image
 footer
 ----------------------------*/
 .footer{
+	position: relative;
 	width: 100%;
 	height: 100%;
+	
 /*
 	background-size: cover;
 	background-image: url(../images/footer/bg_01_pc.jpg);
@@ -194,18 +195,18 @@ footer
   	font-size: 1rem;
 	margin-bottom: 5px;
 }
-.footer-img{
-	padding: 0 8px;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-justify-content: space-between;
-	justify-content: space-between;
-	-webkit-align-items: flex-end;
-	align-items: flex-end;
-	padding-top: 65px;
-}
 .btn-pageTop{
   	display: none;
+}
+.footer-text{
+	display: -webkit-flex;
+	display: flex;
+	position: absolute;
+	top: 74%;
+	width: 100%;
+	align-items: center;
+	justify-content:space-between;
+	padding: 0 4px 4px;
 }
 /*
 .home .footer{
@@ -235,7 +236,8 @@ section,layout
 	}
 .section-head{
 	display: block;
-	padding: 30px 10px 10px;	
+	padding: 30px 10px 10px;
+	letter-spacing: 0.1em;
 }
 .section-title{
 	background-image: url(../images/common/leaf_sp.png);
@@ -250,13 +252,13 @@ section,layout
  	padding: 55px 0 75px;
 }
 .text{
-	padding: 20px;
+	padding: 20px 10px;
 	font-size: 1.5rem;
 	line-height: 1.5;
 	text-align: left;
 }
 .site-text{
-	padding: 20px 0;
+	padding: 14px 0;
 	font-size: 1.48rem;
 	line-height: 1.5;
 	text-align: left;
@@ -276,12 +278,13 @@ btn
 .btn-outer{
 	margin-top: 15px;
 	}
+
 /*--------------------------
 intro
 ----------------------------*/
-
-
-
+.intro{
+	padding: 0 16px;
+}
 /*--------------------------
 reason
 ----------------------------*/
@@ -291,7 +294,7 @@ reason
 }
 .reason-list{
 	text-align: center;
-	width: 70%;
+	width: 75%;
 	margin: 0 auto;
 }
 .reason-list-item{
@@ -357,7 +360,7 @@ trial
 }	
 	
 .trial-main{
-  	padding: 30px 12px 50px;
+  	padding: 0px 12px 50px;
   	color: #fff;
   	font-weight: bold;
 	font-size: 1.5rem;
@@ -375,7 +378,7 @@ trial
 }
 .trial-meta{
 	padding: 0 0 30px;
-	font-size: 3.7vw;
+	font-size: 4.3vw;
 	font-weight: bold;
 	line-height: 1.7;
 }
@@ -390,7 +393,7 @@ trial
 farmer
 ----------------------------*/
 .card-meta{
-	padding: 20px 20px 0px;	
+	padding: 20px 10px 0px;	
 }
 .card-title{
 	font-size: 18px;
@@ -403,17 +406,30 @@ farmer
 /*--------------------------
 recipe
 ----------------------------*/
+.recipe{
+	padding-bottom: 30px;
+}
 .card-ing{
 	font-size: 15px;
 	line-height:1.2;
 	text-align: left;
 	}
 /*--------------------------
+voice
+----------------------------*/
+.card-title.voice{
+    justify-content: flex-start;
+	}
+.card-meta-voice{
+	text-align: left;
+	padding-top: 15px;
+	}
+/*--------------------------
 q&a
 ----------------------------*/
 
 .question{
-	font-size: 1.48rem;
+	font-size: 1.5rem;
 	border-bottom: dotted 2px #159547;	
 }
 .circle-q{
@@ -447,7 +463,12 @@ q&a
 	overflow: hidden;
 	font-size: 1.8rem;
 	font-weight: bold;
-	}	
+	}
+.answer-text {
+	font-size: 1.5rem;
+	line-height: 1.8;
+	text-align: left;	
+}
 
 
 				/*------PC版のcss------*/
@@ -455,8 +476,11 @@ q&a
 					/*--------------------------
 					common
 					----------------------------*/
+					.main{
+						margin-bottom: 50px;
+					}
 					.inner{
-						width: 1140px;
+						width: 100%;
 						margin: 0 auto;
 					}
 					.br-sp{
@@ -471,26 +495,29 @@ q&a
 					.btn-sp{
 						display:none;
 					}
-/*
-					.text-center:not(.trial){
-						text-align: center;
+					.intro{
+						padding: 20px 40px 30px;
 					}
-*/
-					
+					.section-head{
+						letter-spacing: 0.4em;
+					}	
+			
 					/*--------------------------
 					header
 					----------------------------*/	
+					.btn-outer {
+						margin-top: 40px;
+					}
 					.hero-title{
-					    position: absolute;
-						width: 70%;
-						left: 28%;
-						padding: 15px 0;
 						font-size: 12px;
 					}
-
+					.header .logo{
+						max-width: 70%;
+						margin-left: 15px;
+						}
 					.hero-text{
 						position: absolute;
-						width: 34%;
+						width: 40%;
 						top: -100%;
 						margin: 15px 0px;
 						padding: 10px 0 10px 15px;
@@ -502,12 +529,12 @@ q&a
 						text-align: center;
 					}
 					.hero-title-text{
-						padding-left: 15px;
+/*						padding-left: 15px;*/
 					}
 					.hero-text-big{	
-						font-size: 33px;
+						font-size: 35px;
     					font-weight: bold;
-
+						text-indent: 2em;
 						}
 					.hero-text-small{	
 						margin-left: 8px;
@@ -515,26 +542,16 @@ q&a
 						line-height: 34px;
 						}
 					.header {
-						position: static;
+						position: relative;
 						height: auto;
 						padding: 0;
+						margin-bottom: -100px;
+						
 					}
-				/*	.header:before{
-					  content: '';
-					  background: inherit;
-					  -webkit-filter: blur(5px);
-					  -moz-filter: blur(5px);
-					  -o-filter: blur(5px);
-					  -ms-filter: blur(5px);
-					  filter: blur(5px);
-					  position: absolute;
-
-					  top: -5px;
-					  left: -5px;
-					  right: -5px;
-					  bottom: -5px;
-					  z-index: -1;
-					}*/
+					.intro{
+						padding-top: 30px;
+						
+					}
 					.header-inner {
 						-webkit-display: flex;
 						display: flex;
@@ -556,7 +573,7 @@ q&a
 					.header-nav{
 						display: block;
 						position: static;
-						width: 100%;
+						width: auto;
 						height: auto;
 						padding-top: 20px;
 						background-color: transparent;
@@ -577,7 +594,7 @@ q&a
 					}
 					.nav-list .sns {
 						margin: 0 0 0 10px;
-						mix-blend-mode : lighten;
+						mix-blend-mode: lighten;
 						color: #fff;
 					}
 					.sns{
@@ -590,32 +607,17 @@ q&a
 					.footer.footer-pc{
 						position: relative;
 						width: 100%;
-/*
-						background-size: cover;
-						background-image: url(../images/footer/bg_01_pc.jpg);
-						background-repeat: no-repeat;
-*/
 					}
-					.footer-img.footer-img-pc{
-						display: -webkit-flex;
-						display: flex;
-						-webkit-justify-content: space-between;
-						justify-content: space-between;
-						-webkit-align-items: flex-end;
-						align-items: flex-end;
-						padding-top: 130px;				
-					}
+
 					.footer-text{
-						position: absolute;
+						top: 70%;
 						}
 					.footer .logo{
-						max-width: 100px;
-						margin-bottom: 2px;
+						max-width: 22%;
+						margin-left: 5px;
 						}
 					.copyrights{
-						color: #783c01;
 						font-size: 1.5rem;
-						margin-bottom: 10px;
 					}	
 					.btn-pageTop{
 						display: block;
@@ -650,30 +652,12 @@ q&a
 						-ms-transition: all .2s;
 						transition: all .2s;
 						}				
-/*					}
-					.footer.logo-pc{
-						max-width: 50px;
-						margin-bottom: 2px;
-					}
-*/
-/*
-					.copyrights-pc{
-						color: #783c01;
-						font-size: 1.3rem;
-						margin-bottom: 5px;
-					}
-					.copyrights-sp{
-						flex: none;
-					}
-					
-*/
-					
+		
 				
 					/*--------------------------
 					reason
 					----------------------------*/
 					.reason-list{
-				/*		background-size: 480px auto;*/
 						overflow: hidden;/*for IE11*/
 						-webkit-display: flex;
 						display: flex;
@@ -711,36 +695,40 @@ q&a
 						display: -webkit-flex;
 						display: flex;
 						padding: 20px;
+						width: 100%;
 						}		
 					.trial-main{
-						width: 50%;
-						font-size: 1.5rem;
+						position: relative;
+    					top: 100px;
+						width: 100%;
 						text-align: center;
 					}
 					.trial-meta{
 						font-size: 2vw;
 						text-align: left;
-						margin-left: 15%;
+						margin-left: 10%;
+					}
+					.trial-title{
+						letter-spacing: 0.1em;
 					}
 					.bg-a.bg-a-pc{
 						text-align: right;
 						background-image: url(../images/trial/bg_01.png);
-						background-position: 	center top;
+						background-position: center top;
 						background-size: cover;
 						background-repeat: no-repeat;
 						padding: 100px 10px 0 0;
-/*						padding-top: 100px;*/
 					}
 					.bg-b.bg-b-pc{
-						text-align: center;
+						text-align: right;
 						background-image: url(../images/trial/bg_02.png);
-						background-position: 	center top;
+						background-position: center top;
 						background-size: cover;
 						background-repeat: no-repeat;
-						padding-top: 100px;
+						padding: 100px 10px 0 0;
 					}
 					.trial-img{
-						width: 50%;
+						width: 100%;
 					}
 					.list{
 						text-align: right;
@@ -751,7 +739,7 @@ q&a
 					.recipe{
 						display: -webkit-flex;
 						display: flex;
-						padding-bottom: 30px;
+						padding-bottom: 50px;
 						}	
 						
 					.recipe__reverse{	
@@ -760,8 +748,9 @@ q&a
 					.recipe-img{
 						width: 100%;
 						}	
-					.card-meta .recipe-text{
+					.card-meta.recipe-text{
 						width:100%;
+						padding: 5px 10px 20px 20px;
 						}				
 					/*--------------------------
 					voice
@@ -780,7 +769,9 @@ q&a
 						width: 30%;
 						padding: 10px;
 						}
-									
+					.card-title .voice{
+						
+					}		
 					/*--------------------------
 					q&a
 					----------------------------*/
@@ -804,24 +795,14 @@ q&a
 					.question{
 						margin-top: 5%;
 						width: 70%;
-						padding-bottom: 10px;
+						padding-bottom: 20px;
 						text-align:left;
 					}
 					.circle-q{
-						display: inline-block;
-						text-decoration: none;
-						background: #efe9e6;
-						color: #474747;
-						width: 70px;
-						height: 70px;
-						margin-right: 20px;
-						line-height: 70px;
-						border-radius: 50%;
-						text-align: center;
-						vertical-align: middle;
-						overflow: hidden;
-						font-size: 1.8rem;
-						font-weight: bold;
+						font-size: 2.2rem;
+						}
+					.circle-a{
+						font-size: 2.2rem;
 						}
 					.answer{
 						font-size: 18px;
@@ -829,56 +810,12 @@ q&a
 						text-align: left;
 						}
 					.answer-text {
-						font-size: 1.5rem;
 						line-height: 1.5;
-						text-align: left;	
 					}
-/*
-					.circle-a{
-						display: inline-block;
-						text-decoration: none;
-						background: #faece5;
-						color: #474747;
-						width: 70px;
-						height: 70px;
-						margin: 20px;
-						line-height: 70px;
-						border-radius: 50%;
-						text-align: center;
-						vertical-align: middle;
-						overflow: hidden;
-						font-size: 1.8rem;
-						font-weight: bold;
-						}	
-*/
-
-		/*			.list-question{
-						-webkit-display: flex;
-						display: flex;
-						-webkit-flex-wrap: wrap;
-						-webkit-justify-content: center;
-						justify-content: center;
-						flex-wrap: wrap;
-						overflow: hidden;/*for IE11
-						width: 90%;
-						}
-						
-						
-					.card-meta-question{
-						width: 30%;
-						padding: 10px;
-						
-						}  */
-					
-	
+			
 					
 					
-					
-					}
-						
-				
-					
-	
+					}	
 					
 						
 
